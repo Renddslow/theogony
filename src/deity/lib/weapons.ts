@@ -1,5 +1,40 @@
 import mediator from '../../mediator';
 
-export const WEAPONS = [];
+export const WEAPONS = [
+  'sickle',
+  'dagger',
+  'stake',
+  'club',
+  'mace',
+  'morningstar',
+  'shortspear',
+  'pike',
+  'longspear',
+  'dart',
+  'javelin',
+  'sling',
+  'axe',
+  'gladius',
+  'handaxe',
+  'machete',
+  'short sword',
+  'longsword',
+  'battleaxe',
+  'cutlass',
+  'rapier',
+  'scimitar',
+  'warhammer',
+  'greatsword',
+  'lance',
+  'falchion',
+  'greataxe',
+  'pickaxe',
+  'scythe',
+  'longbow',
+  'shortbow',
+  'sai',
+  'whip',
+  'lasso',
+];
 
 export const pickWeapon = (): string => mediator.call('pick', WEAPONS);

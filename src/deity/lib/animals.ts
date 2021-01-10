@@ -3,6 +3,7 @@ import mediator from '../../mediator';
 export const ANIMALS = [
   'alligator',
   'anglership',
+  'archaeopteryx',
   'ape',
   'bat',
   'bear',

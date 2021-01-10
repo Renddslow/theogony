@@ -16,5 +16,5 @@ export const spawnFirstGeneration = (type: Mythos): Array<Deity> => {
   const deityCount = mediator.call('range', ...ranges[type]);
   return Array(deityCount)
     .fill(null)
-    .map(() => createDeity());
+    .map((_, idx) => createDeity({ chief: idx === 0 }));
 };
