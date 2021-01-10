@@ -1,2 +1,2 @@
-export const mythoses = ['chaos', 'egg', 'copulation', 'iluvatar', 'metamorphosis'] as const;
-export type Mythos = typeof mythoses;
+export const mythoses = ['chaos', 'egg', 'copulation', 'iluvatar', 'metamorphosis'];
+export type Mythos = 'chaos' | 'egg' | 'copulation' | 'iluvatar' | 'metamorphosis';

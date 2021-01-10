@@ -1,5 +1,5 @@
 import { mythoses } from './types';
-import mediator from './utils/mediator';
+import mediator from './mediator';
 
 export default () => {
   const idx = Math.floor(mediator.call('random') * mythoses.length);
