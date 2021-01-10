@@ -4,6 +4,7 @@ import mediator from './mediator';
 import chooseMythos from './chooseMythos';
 import range from './utils/range';
 import pick from './utils/pick';
+import cuid from 'cuid';
 
 interface Options {
   seed: string;
@@ -21,6 +22,7 @@ export default (opts: Options) => {
   mediator.provide('random', seedrandom(opts.seed));
   mediator.provide('range', range);
   mediator.provide('pick', pick);
+  mediator.provide('cuid', cuid);
 
   const mythos = chooseMythos();
   const deities = [];

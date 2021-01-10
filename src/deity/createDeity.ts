@@ -60,6 +60,7 @@ const createDeity = (options: Options = {}): Deity => {
     ...(mergeAnimals ? ANIMALS : []), // add default animals
     ...(options.animals || []),
   ];
+  const favoredAnimals = pickFavoredAnimals(animals);
 
   const archetype = pickArchetype();
 
@@ -71,7 +72,7 @@ const createDeity = (options: Options = {}): Deity => {
     archetype,
     chief: !!options.chief,
     domains: pickDomains(),
-    favoredAnimals: pickFavoredAnimals(animals),
+    favoredAnimals: Array.isArray(favoredAnimals) ? favoredAnimals : [favoredAnimals],
     favoredWeapon: pickWeapon(),
     gender: pickGender(),
     humanInvolvementLevel: 'none', // Modified just before final generation
