@@ -9,7 +9,10 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "ava",
-    "test:coverage": "nyc ava"
+    "test:coverage": "nyc ava",
+    "build": "tsc -d",
+    "pretry": "yarn build",
+    "try": "node dist/index.js"
   },
   "husky": {
     "hooks": {

@@ -5,6 +5,7 @@ import chooseMythos from './chooseMythos';
 import range from './utils/range';
 import pick from './utils/pick';
 import cuid from 'cuid';
+import { spawnFirstGeneration } from './spawn';
 
 interface Options {
   seed: string;
@@ -18,14 +19,15 @@ const firstGenerationSpawnAmount = {
   },
 };
 
-export default (opts: Options) => {
+const createSetting = (opts: Options) => {
   mediator.provide('random', seedrandom(opts.seed));
   mediator.provide('range', range);
   mediator.provide('pick', pick);
   mediator.provide('cuid', cuid);
 
   const mythos = chooseMythos();
-  const deities = [];
+  const deities = spawnFirstGeneration(mythos);
+  console.log(deities);
 
   /**
    * 1. Create first generation
@@ -43,3 +45,9 @@ export default (opts: Options) => {
    * 8. Antics/Conflicts
    */
 };
+
+export default createSetting;
+
+if (require.main === module) {
+  createSetting({ seed: process.argv[2] });
+}
