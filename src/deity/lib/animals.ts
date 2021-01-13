@@ -40,6 +40,6 @@ export const ANIMALS = [
 ];
 
 export const pickFavoredAnimals = (animals: Array<string>): string | Array<string> => {
-  const animalCount = mediator.call('range', 0, 5);
+  const animalCount = mediator.call('range', 0, 4);
   return mediator.call('pick', animals, animalCount);
 };

@@ -1,4 +1,6 @@
 import seedrandom from 'seedrandom';
+import { get } from 'dot-prop';
+import sower from 'sower';
 
 import mediator from './mediator';
 import chooseMythos from './chooseMythos';
@@ -26,6 +28,7 @@ const createSetting = (opts: Options) => {
   mediator.provide('cuid', cuid);
 
   const mythos = chooseMythos();
+  console.log('mythos:', mythos);
   const deities = spawnFirstGeneration(mythos);
   console.log(deities);
 
@@ -49,5 +52,7 @@ const createSetting = (opts: Options) => {
 export default createSetting;
 
 if (require.main === module) {
-  createSetting({ seed: process.argv[2] });
+  const seed = get(process.argv, '2', sower.silly());
+  console.log('seed:', seed);
+  createSetting({ seed });
 }

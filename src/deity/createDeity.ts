@@ -3,8 +3,10 @@ import cuid from 'cuid';
 import { pickAlignment, Alignment } from './lib/alignment';
 import { pickFavoredAnimals, ANIMALS } from './lib/animals';
 import { pickArchetype } from './lib/archetypes';
+import { pickColors } from './lib/colors';
 import { pickDomains } from './lib/domains';
 import { pickGender, Gender } from './lib/gender';
+import { pickSymbol } from './lib/symbols';
 import { pickWeapon } from './lib/weapons';
 
 type Options = {
@@ -78,8 +80,8 @@ const createDeity = (options: Options = {}): Deity => {
     humanInvolvementLevel: 'none', // Modified just before final generation
     living: true,
     realm: '', // Added after cosmology established
-    sacredColors: [],
-    symbol: '', // Picked based on archetype
+    sacredColors: pickColors(),
+    symbol: pickSymbol(archetype),
     titles: [], // Picked just before final generation based on stories, antics, wars, etc.
     worshipers: [], // Picked after earth and races are created
   };

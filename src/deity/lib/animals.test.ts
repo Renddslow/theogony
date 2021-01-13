@@ -14,5 +14,5 @@ test('pickFavoredAnimals - returns empty array based on range', (t) => {
 });
 
 test('pickFavoredAnimals - returns multiple animals based on range', (t) => {
-  t.deepEqual(pickFavoredAnimals(['cow', 'horse', 'hen', 'pig', 'dog', 'moose']), ['moose', 'pig']);
+  t.deepEqual(pickFavoredAnimals(['cow', 'horse', 'hen', 'pig', 'dog', 'moose']), 'moose');
 });
