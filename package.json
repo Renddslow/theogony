@@ -12,7 +12,8 @@
     "test:coverage": "nyc ava",
     "build": "tsc -d",
     "pretry": "yarn build",
-    "try": "node dist/index.js"
+    "try": "node dist/index.js",
+    "nameday": "node dist/naming/cli.js"
   },
   "husky": {
     "hooks": {
@@ -54,6 +55,7 @@
     "dot-prop": "^6.0.1",
     "klona": "^2.0.4",
     "mannish": "^4.0.1",
+    "sade": "^1.7.4",
     "seedrandom": "^3.0.5",
     "sower": "^0.1.0"
   }

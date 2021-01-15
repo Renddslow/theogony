@@ -7,13 +7,14 @@ import weightTokens from './weightTokens';
 import getParts from './getParts';
 
 const createNameDataset = (names: Array<string>): NameDataset => {
+  const lowercaseNames = names.map((n) => n.toLowerCase());
   const dataset: NameDataset = {
-    lengthRange: getMinMaxNameLength(klona(names)),
-    nextTokens: <NextTokens>weightTokens(getNextTokens(klona(names))),
+    lengthRange: getMinMaxNameLength(klona(lowercaseNames)),
+    nextTokens: <NextTokens>weightTokens(getNextTokens(klona(lowercaseNames))),
   };
 
   if (names.some((n) => n.split(/['\-\s]/).length > 1)) {
-    dataset.parts = getParts(klona(names));
+    dataset.parts = getParts(klona(lowercaseNames));
   }
 
   return dataset;
