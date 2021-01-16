@@ -12,6 +12,7 @@ import { SourceRegion } from '../types';
 import { deityNames } from '../data';
 import mediator from '../mediator';
 import createName from '../naming/createName';
+import createAdjective from '../naming/createAdjective';
 
 type Options = {
   chief?: boolean;
@@ -76,7 +77,7 @@ const createDeity = (options: Options = {}): Deity => {
   return {
     id: cuid(),
     name,
-    adjective: '',
+    adjective: createAdjective(name),
     alignment: pickAlignment(),
     archetype,
     chief: !!options.chief,

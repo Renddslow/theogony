@@ -33,6 +33,7 @@ const createSetting = (opts: Options) => {
 
   const mythos = chooseMythos();
   console.log('mythos:', mythos);
+  // TODO: Drop in phonetic pairings (ph, th, kh, tz, etc)
   const deities = spawnFirstGeneration(mythos, opts.nameSource);
   console.log(deities);
 
