@@ -10,19 +10,12 @@ import cuid from 'cuid';
 import { spawnFirstGeneration } from './spawn';
 import { SourceRegion } from './types';
 import weightedPick from './utils/weightedPick';
+import createName from './naming/createName';
 
 interface Options {
   seed: string;
   nameSource?: SourceRegion;
 }
-
-const firstGenerationSpawnAmount = {
-  chaos: (r) => {
-    const MAX = 8;
-    const MIN = 4;
-    return Math.floor(r() * (MAX + 1 - MIN) + MIN);
-  },
-};
 
 const createSetting = (opts: Options) => {
   mediator.provide('random', seedrandom(opts.seed));
@@ -38,19 +31,23 @@ const createSetting = (opts: Options) => {
   console.log(deities);
 
   /**
-   * 1. Create first generation
+   * 1. Create first generation ✅
    * 2. Theogony
    *    - chaos: slay a dragon/serpent - make some gods
    *    - copulation: sexy-time (think @dunsany/pantheon)
    *    - egg
-   *    - iluvatar: chief One god who creates a divine council. Council forms into clans
+   *    - iluvatar: chief One god who creates a divine council
    *    - metamorphosis: similar to iluvatar, but with the singular god splitting itself and becoming other gods
    * 3. (optional) Deity conflict
    * 4. Cosmology
    * 5. Second Generation
    * 6. Relationships
    * 7. (optional) Titanomachy
-   * 8. Antics/Conflicts
+   * 8. Races + Cultures Created
+   * 9. Antics/Conflicts
+   * 10. Heroes + Demi-gods
+   * 11. (optional) Cataclysm
+   * 12. (optional) Ragnarok
    */
 };
 
