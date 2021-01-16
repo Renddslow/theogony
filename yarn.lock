@@ -2175,6 +2175,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+pick-random-weighted@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/pick-random-weighted/-/pick-random-weighted-1.2.3.tgz#3d337543ff59b53c7aad17aa97560981a4ac0311"
+  integrity sha512-ndsh+IVYLj5TCLOs1R8N0/8F9npfSNORpmArX0ahw4GFzZ2rpM9Orkbkwp+q16QAE7QDaLWn+4EsEnxI7VMDJA==
+
 picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1, picomatch@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"

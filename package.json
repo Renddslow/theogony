@@ -13,7 +13,7 @@
     "build": "tsc -d",
     "pretry": "yarn build",
     "try": "node dist/index.js",
-    "nameday": "node dist/naming/cli.js"
+    "nameday": "node dist/naming/generator/cli.js"
   },
   "husky": {
     "hooks": {

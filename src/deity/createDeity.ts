@@ -8,11 +8,16 @@ import { pickDomains } from './lib/domains';
 import { pickGender, Gender } from './lib/gender';
 import { pickSymbol } from './lib/symbols';
 import { pickWeapon } from './lib/weapons';
+import { SourceRegion } from '../types';
+import { deityNames } from '../data';
+import mediator from '../mediator';
+import createName from '../naming/createName';
 
 type Options = {
   chief?: boolean;
   animals?: Array<string>;
   mergeAnimals?: boolean;
+  region?: SourceRegion;
 };
 
 export type Deity = {
@@ -63,12 +68,14 @@ const createDeity = (options: Options = {}): Deity => {
     ...(options.animals || []),
   ];
   const favoredAnimals = pickFavoredAnimals(animals);
+  const region = options.region || mediator.call('pick', Object.keys(deityNames));
 
   const archetype = pickArchetype();
+  const name = createName(deityNames[region]);
 
   return {
     id: cuid(),
-    name: '', // TODO: generate name
+    name,
     adjective: '',
     alignment: pickAlignment(),
     archetype,

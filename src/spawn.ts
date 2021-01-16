@@ -1,5 +1,5 @@
 import mediator from './mediator';
-import { Mythos } from './types';
+import { Mythos, SourceRegion } from './types';
 import createDeity, { Deity } from './deity';
 
 const ranges = {
@@ -8,9 +8,9 @@ const ranges = {
   egg: [8, 12],
 };
 
-export const spawnFirstGeneration = (type: Mythos): Array<Deity> => {
+export const spawnFirstGeneration = (type: Mythos, region: SourceRegion): Array<Deity> => {
   if (type === 'iluvatar' || type === 'metamorphosis') {
-    return [createDeity({ chief: true })];
+    return [createDeity({ chief: true, region })];
   }
 
   const deityCount = mediator.call('range', ...ranges[type]);

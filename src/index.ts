@@ -8,9 +8,12 @@ import range from './utils/range';
 import pick from './utils/pick';
 import cuid from 'cuid';
 import { spawnFirstGeneration } from './spawn';
+import { SourceRegion } from './types';
+import weightedPick from './utils/weightedPick';
 
 interface Options {
   seed: string;
+  nameSource?: SourceRegion;
 }
 
 const firstGenerationSpawnAmount = {
@@ -26,10 +29,11 @@ const createSetting = (opts: Options) => {
   mediator.provide('range', range);
   mediator.provide('pick', pick);
   mediator.provide('cuid', cuid);
+  mediator.provide('weighted-pick', weightedPick);
 
   const mythos = chooseMythos();
   console.log('mythos:', mythos);
-  const deities = spawnFirstGeneration(mythos);
+  const deities = spawnFirstGeneration(mythos, opts.nameSource);
   console.log(deities);
 
   /**
