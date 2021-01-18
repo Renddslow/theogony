@@ -1,0 +1,781 @@
+{
+  "lengthRange": [2, 13],
+  "nextTokens": {
+    "start": [
+      {
+        "weight": 18,
+        "character": "a"
+      },
+      {
+        "weight": 16,
+        "character": "e"
+      },
+      {
+        "weight": 45,
+        "character": "n"
+      },
+      {
+        "weight": 4,
+        "character": "u"
+      },
+      {
+        "weight": 14,
+        "character": "s"
+      },
+      {
+        "weight": 3,
+        "character": "z"
+      },
+      {
+        "weight": 8,
+        "character": "m"
+      },
+      {
+        "weight": 13,
+        "character": "i"
+      },
+      {
+        "weight": 5,
+        "character": "k"
+      },
+      {
+        "weight": 3,
+        "character": "t"
+      },
+      {
+        "weight": 8,
+        "character": "d"
+      },
+      {
+        "weight": 9,
+        "character": "g"
+      },
+      {
+        "weight": 6,
+        "character": "b"
+      },
+      {
+        "weight": 1,
+        "character": "o"
+      },
+      {
+        "weight": 7,
+        "character": "h"
+      },
+      {
+        "weight": 7,
+        "character": "l"
+      },
+      {
+        "weight": 3,
+        "character": "p"
+      },
+      {
+        "weight": 3,
+        "character": "š"
+      }
+    ],
+    "a": [
+      {
+        "weight": 25,
+        "character": "n"
+      },
+      {
+        "weight": 16,
+        "character": "m"
+      },
+      {
+        "weight": 11,
+        "character": "s"
+      },
+      {
+        "weight": 13,
+        "character": "l"
+      },
+      {
+        "weight": 10,
+        "character": "b"
+      },
+      {
+        "weight": 19,
+        "character": "r"
+      },
+      {
+        "weight": 5,
+        "character": "t"
+      },
+      {
+        "weight": 9,
+        "character": "g"
+      },
+      {
+        "weight": 3,
+        "character": "k"
+      },
+      {
+        "weight": 1,
+        "character": "u"
+      },
+      {
+        "weight": 2,
+        "character": "d"
+      },
+      {
+        "weight": 2,
+        "character": "z"
+      },
+      {
+        "weight": 5,
+        "character": "h"
+      },
+      {
+        "weight": 3,
+        "character": "y"
+      },
+      {
+        "weight": 1,
+        "character": "š"
+      }
+    ],
+    "n": [
+      {
+        "weight": 16,
+        "character": "u"
+      },
+      {
+        "weight": 2,
+        "character": "l"
+      },
+      {
+        "weight": 23,
+        "character": "a"
+      },
+      {
+        "weight": 35,
+        "character": "i"
+      },
+      {
+        "weight": 5,
+        "character": "k"
+      },
+      {
+        "weight": 8,
+        "character": "s"
+      },
+      {
+        "weight": 8,
+        "character": "n"
+      },
+      {
+        "weight": 2,
+        "character": "z"
+      },
+      {
+        "weight": 4,
+        "character": "e"
+      },
+      {
+        "weight": 9,
+        "character": "g"
+      },
+      {
+        "weight": 4,
+        "character": "t"
+      },
+      {
+        "weight": 1,
+        "character": "h"
+      },
+      {
+        "weight": 4,
+        "character": "m"
+      },
+      {
+        "weight": 1,
+        "character": "ī"
+      },
+      {
+        "weight": 1,
+        "character": "b"
+      },
+      {
+        "weight": 4,
+        "character": "d"
+      }
+    ],
+    "u": [
+      {
+        "weight": 8,
+        "character": "n"
+      },
+      {
+        "weight": 4,
+        "character": "d"
+      },
+      {
+        "weight": 3,
+        "character": "t"
+      },
+      {
+        "weight": 3,
+        "character": "e"
+      },
+      {
+        "weight": 1,
+        "character": "k"
+      },
+      {
+        "weight": 12,
+        "character": "r"
+      },
+      {
+        "weight": 3,
+        "character": "z"
+      },
+      {
+        "weight": 8,
+        "character": "m"
+      },
+      {
+        "weight": 8,
+        "character": "l"
+      },
+      {
+        "weight": 10,
+        "character": "g"
+      },
+      {
+        "weight": 1,
+        "character": "b"
+      },
+      {
+        "weight": 5,
+        "character": "s"
+      },
+      {
+        "weight": 1,
+        "character": "h"
+      }
+    ],
+    "e": [
+      {
+        "weight": 15,
+        "character": "n"
+      },
+      {
+        "weight": 2,
+        "character": "a"
+      },
+      {
+        "weight": 7,
+        "character": "r"
+      },
+      {
+        "weight": 6,
+        "character": "s"
+      },
+      {
+        "weight": 2,
+        "character": "m"
+      },
+      {
+        "weight": 2,
+        "character": "l"
+      },
+      {
+        "weight": 3,
+        "character": "t"
+      },
+      {
+        "weight": 1,
+        "character": "u"
+      },
+      {
+        "weight": 1,
+        "character": "g"
+      }
+    ],
+    "l": [
+      {
+        "weight": 7,
+        "character": "i"
+      },
+      {
+        "weight": 1,
+        "character": "g"
+      },
+      {
+        "weight": 13,
+        "character": "a"
+      },
+      {
+        "weight": 1,
+        "character": "n"
+      },
+      {
+        "weight": 4,
+        "character": "u"
+      },
+      {
+        "weight": 1,
+        "character": "o"
+      },
+      {
+        "weight": 1,
+        "character": "e"
+      },
+      {
+        "weight": 1,
+        "character": "b"
+      },
+      {
+        "weight": 1,
+        "character": "s"
+      },
+      {
+        "weight": 1,
+        "character": "l"
+      }
+    ],
+    "i": [
+      {
+        "weight": 12,
+        "character": "l"
+      },
+      {
+        "weight": 10,
+        "character": "r"
+      },
+      {
+        "weight": 7,
+        "character": "m"
+      },
+      {
+        "weight": 36,
+        "character": "n"
+      },
+      {
+        "weight": 4,
+        "character": "k"
+      },
+      {
+        "weight": 12,
+        "character": "s"
+      },
+      {
+        "weight": 2,
+        "character": "a"
+      },
+      {
+        "weight": 4,
+        "character": "d"
+      },
+      {
+        "weight": 3,
+        "character": "g"
+      },
+      {
+        "weight": 1,
+        "character": "b"
+      },
+      {
+        "weight": 1,
+        "character": "š"
+      },
+      {
+        "weight": 1,
+        "character": "t"
+      }
+    ],
+    "m": [
+      {
+        "weight": 1,
+        "character": "n"
+      },
+      {
+        "weight": 4,
+        "character": "m"
+      },
+      {
+        "weight": 11,
+        "character": "u"
+      },
+      {
+        "weight": 18,
+        "character": "a"
+      },
+      {
+        "weight": 8,
+        "character": "e"
+      },
+      {
+        "weight": 1,
+        "character": "g"
+      },
+      {
+        "weight": 3,
+        "character": "d"
+      },
+      {
+        "weight": 1,
+        "character": "t"
+      },
+      {
+        "weight": 2,
+        "character": "i"
+      }
+    ],
+    "r": [
+      {
+        "weight": 1,
+        "character": "g"
+      },
+      {
+        "weight": 1,
+        "character": "d"
+      },
+      {
+        "weight": 4,
+        "character": "t"
+      },
+      {
+        "weight": 3,
+        "character": "s"
+      },
+      {
+        "weight": 2,
+        "character": "e"
+      },
+      {
+        "weight": 8,
+        "character": "r"
+      },
+      {
+        "weight": 16,
+        "character": "a"
+      },
+      {
+        "weight": 1,
+        "character": "h"
+      },
+      {
+        "weight": 1,
+        "character": "l"
+      },
+      {
+        "weight": 3,
+        "character": "u"
+      },
+      {
+        "weight": 5,
+        "character": "i"
+      },
+      {
+        "weight": 1,
+        "character": "m"
+      }
+    ],
+    "k": [
+      {
+        "weight": 7,
+        "character": "i"
+      },
+      {
+        "weight": 6,
+        "character": "u"
+      },
+      {
+        "weight": 6,
+        "character": "a"
+      },
+      {
+        "weight": 2,
+        "character": "k"
+      }
+    ],
+    "d": [
+      {
+        "weight": 2,
+        "character": "i"
+      },
+      {
+        "weight": 8,
+        "character": "u"
+      },
+      {
+        "weight": 11,
+        "character": "a"
+      },
+      {
+        "weight": 1,
+        "character": "ē"
+      }
+    ],
+    "s": [
+      {
+        "weight": 30,
+        "character": "h"
+      },
+      {
+        "weight": 6,
+        "character": "u"
+      },
+      {
+        "weight": 11,
+        "character": "i"
+      },
+      {
+        "weight": 1,
+        "character": "t"
+      },
+      {
+        "weight": 6,
+        "character": "a"
+      },
+      {
+        "weight": 1,
+        "character": "e"
+      },
+      {
+        "weight": 1,
+        "character": "l"
+      },
+      {
+        "weight": 1,
+        "character": "k"
+      }
+    ],
+    "h": [
+      {
+        "weight": 3,
+        "character": "i"
+      },
+      {
+        "weight": 14,
+        "character": "a"
+      },
+      {
+        "weight": 3,
+        "character": "t"
+      },
+      {
+        "weight": 8,
+        "character": "u"
+      },
+      {
+        "weight": 2,
+        "character": "k"
+      },
+      {
+        "weight": 4,
+        "character": "e"
+      },
+      {
+        "weight": 1,
+        "character": "z"
+      },
+      {
+        "weight": 1,
+        "character": "g"
+      },
+      {
+        "weight": 1,
+        "character": "n"
+      },
+      {
+        "weight": 2,
+        "character": "m"
+      },
+      {
+        "weight": 1,
+        "character": "d"
+      }
+    ],
+    "t": [
+      {
+        "weight": 13,
+        "character": "u"
+      },
+      {
+        "weight": 6,
+        "character": "a"
+      },
+      {
+        "weight": 4,
+        "character": "i"
+      },
+      {
+        "weight": 1,
+        "character": "e"
+      },
+      {
+        "weight": 2,
+        "character": "t"
+      }
+    ],
+    "z": [
+      {
+        "weight": 7,
+        "character": "u"
+      },
+      {
+        "weight": 3,
+        "character": "i"
+      },
+      {
+        "weight": 2,
+        "character": "a"
+      }
+    ],
+    "g": [
+      {
+        "weight": 18,
+        "character": "a"
+      },
+      {
+        "weight": 12,
+        "character": "i"
+      },
+      {
+        "weight": 1,
+        "character": "o"
+      },
+      {
+        "weight": 1,
+        "character": "e"
+      },
+      {
+        "weight": 4,
+        "character": "u"
+      },
+      {
+        "weight": 1,
+        "character": "g"
+      },
+      {
+        "weight": 1,
+        "character": "n"
+      }
+    ],
+    "b": [
+      {
+        "weight": 3,
+        "character": "u"
+      },
+      {
+        "weight": 2,
+        "character": "z"
+      },
+      {
+        "weight": 7,
+        "character": "a"
+      },
+      {
+        "weight": 2,
+        "character": "e"
+      },
+      {
+        "weight": 1,
+        "character": "y"
+      },
+      {
+        "weight": 4,
+        "character": "i"
+      },
+      {
+        "weight": 1,
+        "character": "r"
+      }
+    ],
+    "o": [
+      {
+        "weight": 2,
+        "character": "n"
+      },
+      {
+        "weight": 1,
+        "character": "f"
+      }
+    ],
+    "ī": [
+      {
+        "weight": 1,
+        "character": "t"
+      }
+    ],
+    "y": [
+      {
+        "weight": 1,
+        "character": "l"
+      },
+      {
+        "weight": 3,
+        "character": "a"
+      }
+    ],
+    "š": [
+      {
+        "weight": 1,
+        "character": "ḫ"
+      },
+      {
+        "weight": 2,
+        "character": "a"
+      },
+      {
+        "weight": 1,
+        "character": "u"
+      }
+    ],
+    "ḫ": [
+      {
+        "weight": 1,
+        "character": "a"
+      }
+    ],
+    "p": [
+      {
+        "weight": 3,
+        "character": "a"
+      }
+    ],
+    "ē": [
+      {
+        "weight": 1,
+        "character": "r"
+      }
+    ]
+  },
+  "parts": [
+    {
+      "weight": 142,
+      "count": 1
+    },
+    {
+      "count": 2,
+      "weight": 11,
+      "partLengthMinimum": 2,
+      "separators": [
+        {
+          "character": "-",
+          "weight": 11
+        }
+      ]
+    },
+    {
+      "count": 3,
+      "weight": 3,
+      "partLengthMinimum": 1,
+      "separators": [
+        {
+          "character": " ",
+          "weight": 2
+        },
+        {
+          "character": "-",
+          "weight": 4
+        }
+      ]
+    }
+  ]
+}

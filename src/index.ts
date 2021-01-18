@@ -24,11 +24,28 @@ const createSetting = (opts: Options) => {
   mediator.provide('cuid', cuid);
   mediator.provide('weighted-pick', weightedPick);
 
-  const mythos = chooseMythos();
-  console.log('mythos:', mythos);
+  const setting = {
+    mythos: chooseMythos(),
+    deities: [],
+    stories: [],
+  };
   // TODO: Drop in phonetic pairings (ph, th, kh, tz, etc)
-  const deities = spawnFirstGeneration(mythos, opts.nameSource);
-  console.log(deities);
+  // TODO: explore making domains relate to archetype
+  setting.deities.push(
+    ...spawnFirstGeneration(setting.mythos, opts.nameSource).map((d) => ({
+      ...d,
+      generation: 1,
+    })),
+  );
+  console.log('mythos:', setting.mythos);
+  console.log('deities:', setting.deities);
+
+  switch (setting.mythos) {
+    case 'chaos':
+      console.log('🦋');
+    // stories.push(createChaosConflict)
+    // deities.push(...spawnSecondGeneration())
+  }
 
   /**
    * 1. Create first generation ✅

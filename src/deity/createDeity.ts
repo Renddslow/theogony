@@ -33,6 +33,7 @@ export type Deity = {
   favoredAnimals: Array<string>;
   favoredWeapon: string;
   gender: Gender;
+  generation?: 1 | 2 | 3;
   humanInvolvementLevel: 'heavy' | 'standard' | 'light' | 'none'; // all deities start at none
   living: boolean;
   realm: string;
