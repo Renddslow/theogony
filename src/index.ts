@@ -10,7 +10,9 @@ import cuid from 'cuid';
 import { spawnFirstGeneration } from './spawn';
 import { SourceRegion } from './types';
 import weightedPick from './utils/weightedPick';
-import createName from './naming/createName';
+import createChaosConflict from './conflict/chaos';
+import pointBuy from './utils/pointBuy';
+import d from './utils/d';
 
 interface Options {
   seed: string;
@@ -23,10 +25,14 @@ const createSetting = (opts: Options) => {
   mediator.provide('pick', pick);
   mediator.provide('cuid', cuid);
   mediator.provide('weighted-pick', weightedPick);
+  mediator.provide('point-buy', pointBuy);
+  mediator.provide('d', d);
 
   const setting = {
     mythos: chooseMythos(),
     deities: [],
+    monsters: [],
+    characters: [],
     stories: [],
   };
   // TODO: Drop in phonetic pairings (ph, th, kh, tz, etc)
@@ -37,15 +43,23 @@ const createSetting = (opts: Options) => {
       generation: 1,
     })),
   );
-  console.log('mythos:', setting.mythos);
-  console.log('deities:', setting.deities);
 
   switch (setting.mythos) {
-    case 'chaos':
+    case 'chaos': {
       console.log('🦋');
-    // stories.push(createChaosConflict)
-    // deities.push(...spawnSecondGeneration())
+      const { story, monster, dead } = createChaosConflict(setting.deities);
+      setting.stories.push(story);
+      console.log(story);
+      setting.monsters.push(monster);
+      setting.deities = setting.deities.map((deity) => ({
+        ...deity,
+        living: !dead.includes(deity.id),
+      }));
+      setting.deities.push(...[]); // spawnSecondGeneration('chaos')
+    }
   }
+
+  // console.log(JSON.stringify(setting, null, 2));
 
   /**
    * 1. Create first generation ✅

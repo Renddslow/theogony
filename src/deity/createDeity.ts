@@ -23,6 +23,7 @@ type Options = {
 
 export type Deity = {
   id: string;
+  characterType: 'deity';
   name: string;
   adjective: string;
   alignment: Alignment;
@@ -41,6 +42,8 @@ export type Deity = {
   symbol: string;
   titles: Array<string>;
   worshipers: Array<string>;
+  hp: number;
+  hpDescription: string;
 };
 
 type Book = {
@@ -77,6 +80,7 @@ const createDeity = (options: Options = {}): Deity => {
 
   return {
     id: cuid(),
+    characterType: 'deity',
     name,
     adjective: createAdjective(name),
     alignment: pickAlignment(),
@@ -93,6 +97,8 @@ const createDeity = (options: Options = {}): Deity => {
     symbol: pickSymbol(archetype),
     titles: [], // Picked just before final generation based on stories, antics, wars, etc.
     worshipers: [], // Picked after earth and races are created
+    hpDescription: '20d8 + 100',
+    hp: mediator.call('d', 8, 20) + 100,
   };
 };
 
