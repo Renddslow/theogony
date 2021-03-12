@@ -1,6 +1,7 @@
 import seedrandom from 'seedrandom';
 import { get } from 'dot-prop';
 import sower from 'sower';
+import mri from 'mri';
 
 import mediator from './mediator';
 import chooseMythos from './chooseMythos';
@@ -8,7 +9,7 @@ import range from './utils/range';
 import pick from './utils/pick';
 import cuid from 'cuid';
 import { spawnFirstGeneration } from './spawn';
-import { SourceRegion } from './types';
+import { Mythos, SourceRegion } from './types';
 import weightedPick from './utils/weightedPick';
 import createChaosConflict from './conflict/chaos';
 import pointBuy from './utils/pointBuy';
@@ -16,6 +17,7 @@ import d from './utils/d';
 
 interface Options {
   seed: string;
+  mythos?: Mythos;
   nameSource?: SourceRegion;
 }
 
@@ -29,7 +31,7 @@ const createSetting = (opts: Options) => {
   mediator.provide('d', d);
 
   const setting = {
-    mythos: chooseMythos(),
+    mythos: chooseMythos({ mythos: opts.mythos }),
     deities: [],
     monsters: [],
     characters: [],
@@ -85,7 +87,12 @@ const createSetting = (opts: Options) => {
 export default createSetting;
 
 if (require.main === module) {
-  const seed = get(process.argv, '2', sower.silly());
+  const opts = mri(process.argv.slice(2), {
+    default: {
+      mythos: '',
+    },
+  });
+  const seed = get(opts, '_.0', sower.silly());
   console.log('seed:', seed);
-  createSetting({ seed });
+  createSetting({ seed, mythos: opts.mythos });
 }

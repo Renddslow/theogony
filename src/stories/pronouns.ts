@@ -21,7 +21,7 @@ const getPronouns = (gender: Gender): Pronoun => {
       return {
         subject: 'she',
         object: 'her',
-        possessive: 'hers',
+        possessive: 'her',
         reflexive: 'herself',
       };
     case 'non-binary':

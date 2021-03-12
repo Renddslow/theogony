@@ -1,7 +1,11 @@
 import { Mythos, mythoses } from './types';
 import mediator from './mediator';
 
-export default (): Mythos => {
+type Options = {
+  mythos: Mythos;
+};
+
+export default (opts?: Options): Mythos => {
   const idx = Math.floor(mediator.call('random') * mythoses.length);
-  return <Mythos>mythoses[idx];
+  return opts.mythos || <Mythos>mythoses[idx];
 };

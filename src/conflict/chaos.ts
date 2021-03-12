@@ -13,7 +13,10 @@ type ChaosEvent = {
 
 const createChaosConflict = (deities: Array<Deity>): ChaosEvent => {
   const participantsCount = mediator.call('range', 1, deities.length);
-  const participants = mediator.call('pick', deities, participantsCount);
+  let participants = mediator.call('pick', deities, participantsCount);
+  if (!Array.isArray(participants)) {
+    participants = [participants];
+  }
 
   const monster = createMonster('chaos');
 
