@@ -107,3 +107,12 @@ test('generateTextFromTemplate - with inner conditionals', (t) => {
   const expected = 'And all the people, deciding to have cake, sat down to sup.';
   t.is(generateTextFromTemplate(text, {}, data), expected);
 });
+
+test('generateTextFromTemplate - ', (t) => {
+  const text = `{@series participants "name"} went to the store.`;
+  const data = {
+    participants: [{ name: 'Greg' }, { name: 'Bobby' }, { name: 'Marsha' }, { name: 'Susie' }],
+  };
+  const expected = 'Greg, Bobby, Marsha, along with Susie went to the store.';
+  t.is(generateTextFromTemplate(text, {}, data), expected);
+});

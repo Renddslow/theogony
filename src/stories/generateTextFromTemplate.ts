@@ -1,5 +1,37 @@
 import { get } from 'dot-prop';
 import mediator from '../mediator';
+import utils from './utils';
+
+const safeSplit = (str: string) => {
+  const segments = [];
+
+  let inString = false;
+  let string = '';
+
+  for (const char of str) {
+    if (/[\s\r\n]/.test(char) && !inString) {
+      segments.push(string);
+      string = '';
+      continue;
+    }
+
+    if (char === '"' && !inString) {
+      inString = true;
+      continue;
+    }
+
+    if (char === '"' && inString) {
+      inString = false;
+      segments.push(string);
+      string = '';
+      continue;
+    }
+
+    string += char;
+  }
+
+  return segments;
+};
 
 const replace = (dictionary: Record<string, any>, data: Record<string, any>) => (x, key) => {
   const [entity, ...path] = key.trim().split('.');
@@ -7,6 +39,14 @@ const replace = (dictionary: Record<string, any>, data: Record<string, any>) => 
 
   if (entity === '$') {
     return mediator.call('pick', get(dictionary, dataPath));
+  }
+
+  if (key.startsWith('@')) {
+    const [func, ...args] = safeSplit(key.replace('@', ''));
+    if (!utils[func]) {
+      throw new Error(`@${func} is not a valid template function`);
+    }
+    return utils[func](data)(...args);
   }
 
   return get(data, key.trim());
