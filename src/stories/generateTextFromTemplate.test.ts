@@ -93,8 +93,7 @@ test('generateTextFromTemplate - with matching conditional and surrounding text'
   t.is(generateTextFromTemplate(text, {}, data), expected);
 });
 
-// TODO: gonna need recursion or outward-in processing
-test('generateTextFromTemplate - ', (t) => {
+test('generateTextFromTemplate - with inner conditionals', (t) => {
   const text =
     '[participants.length > 1]\n' +
     'And all the people[!!cake], deciding to have cake,[end] sat down to sup.\n' +
