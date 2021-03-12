@@ -2,38 +2,7 @@ import { Monster } from '../types';
 import mediator from '../mediator';
 import getPronouns from './pronouns';
 import { Deity } from '../deity';
-
-const EMERGE_FROM = ['sea', 'chaos waters', 'abyss', 'rift', 'aether'];
-const ADJECTIVE = ['violent', 'ferocious', 'vile', 'wicked'];
-const EVIL_ACT = [
-  'commanded the gods to kneel',
-  'inflicted heavy burdens on the gods',
-  'wrought chaos throughout the cosmos',
-];
-const EVIL_DESCRIBED = ['tyranny'];
-const CREATIVE_FLUIDS = [
-  'sweat',
-  'blood',
-  'semen',
-  'reproductive fluids',
-  'spit',
-  'urine',
-  'feces',
-];
-const CREATIVE_PARTS = [
-  'arms',
-  'limbs',
-  'talismans',
-  'sacred symbols',
-  'weapons',
-  ...CREATIVE_FLUIDS,
-];
-const FLOAT_LENGTH = ['generations', 'a generation', 'eons', 'an age', 'an era', 'a lifetime'];
-const KILL_VERB = ['cleaved'];
-const CREATIVE_STATE = ['ecstasy', 'rage', 'anger', 'mischief', 'genius'];
-const CREATIVE_ACT = ['mingled', 'joined', 'stirred in'];
-const REIGN_TERM = ['reign', 'regime', 'cruelty', 'machinations', 'violence'];
-const SUPREMACY = ['reign of terror', 'endless regime', 'final empire', 'cosmos breaking rule'];
+import dictionary from './dictionary';
 
 const capitalize = (word: string) => `${word[0].toUpperCase()}${word.slice(1)}`;
 const possessive = (word: string) => (word[word.length - 1] === 's' ? `${word}'` : `${word}'s`);
@@ -42,14 +11,15 @@ const godOrGoddess = (gender: string) => (gender !== 'female' ? 'god' : 'goddess
 const opener = (monster: Monster) => {
   const pronouns = getPronouns(monster.gender);
   const paragraph = [
-    `Out of the ${mediator.call('pick', EMERGE_FROM)}, ${monster.name} emerged.`,
-    `A ${mediator.call('pick', ADJECTIVE)} ${monster.type}, ${pronouns.subject} ${mediator.call(
-      'pick',
-      EVIL_ACT,
-    )}.`,
+    `Out of the ${mediator.call('pick', dictionary.chaos.monster.emerge_from)}, ${
+      monster.name
+    } emerged.`,
+    `A ${mediator.call('pick', dictionary.chaos.monster.adjective)} ${monster.type}, ${
+      pronouns.subject
+    } ${mediator.call('pick', dictionary.chaos.monster.evil_act)}.`,
     `${capitalize(pronouns.possessive)} ${mediator.call(
       'pick',
-      EVIL_DESCRIBED,
+      dictionary.chaos.monster.evil_descriptor,
     )} was great, and it broke the souls of the newly formed gods.`,
     `But ${pronouns.possessive} reign was not to last.`,
   ];
@@ -75,16 +45,17 @@ const startOfWar = (monster: Monster, participants: Deity[], allGods: boolean) =
         `Together they engaged the ${monster.type} in pitched battle,`,
         `seeking once and for all to cast down ${
           getPronouns(monster.gender).possessive
-        } ${mediator.call('pick', SUPREMACY)}.`,
+        } ${mediator.call('pick', dictionary.chaos.monster.supremacy)}.`,
       ],
     );
   } else {
     const warrior = participants[0];
     paragraph.push(
       ...[
-        `Only one had the courage to stand against the ${mediator.call('pick', REIGN_TERM)} of ${
-          monster.name
-        }.`,
+        `Only one had the courage to stand against the ${mediator.call(
+          'pick',
+          dictionary.chaos.monster.reign_descriptor,
+        )} of ${monster.name}.`,
         `${warrior.name}, ${godOrGoddess(warrior.gender)} of ${warrior.archetype} confronted the ${
           monster.type
         } in pitched battle.`,
@@ -143,13 +114,22 @@ const defeatEnding = (monster: Monster) => {
     `Though the gods could not defeat ${monster.name}, ${monsterPronoun.subject} fled back to whence ${monsterPronoun.subject} had come.`,
     `Yet all was not lost for the gods and their progeny.`,
     mingleWithMonsterBlood
-      ? `The ${mediator.call('pick', CREATIVE_PARTS)} floated through the ${mediator.call(
+      ? `The ${mediator.call(
           'pick',
-          EMERGE_FROM,
-        )} for ${mediator.call('pick', FLOAT_LENGTH)}. Over time, they mingled together.`
-      : `For ${mediator.call('pick', FLOAT_LENGTH)} the blood of ${
+          dictionary.chaos.gods.creative_parts,
+        )} floated through the ${mediator.call(
+          'pick',
+          dictionary.chaos.monster.emerge_from,
+        )} for ${mediator.call(
+          'pick',
+          dictionary.chaos.gods.float_length,
+        )}. Over time, they mingled together.`
+      : `For ${mediator.call('pick', dictionary.chaos.gods.float_length)} the blood of ${
           monster.name
-        } and the ${mediator.call('pick', CREATIVE_PARTS)} of the gods mingled together.`,
+        } and the ${mediator.call(
+          'pick',
+          dictionary.chaos.gods.creative_parts,
+        )} of the gods mingled together.`,
     `Their union congealed and gave birth to a new generation of gods.`,
   ];
 
@@ -166,7 +146,7 @@ const victoryEnding = (monster: Monster, slayer: Deity) => {
     `${slayer.name} swung with ${slayerPronoun.possessive} ${slayer.favoredWeapon}, bringing it down with a heavy crash.`,
     `With all ${slayerPronoun.possessive} might ${slayerPronoun.subject} ${mediator.call(
       'pick',
-      KILL_VERB,
+      dictionary.chaos.gods.kill_verb,
     )} the head of ${monster.name} clean off.`,
     `${slayer.name} raised the head of ${monster.name} aloft.`,
   ];
@@ -186,10 +166,13 @@ const victoryEnding = (monster: Monster, slayer: Deity) => {
 
   paragraph.push(
     ...[
-      `In a state of pure ${mediator.call('pick', CREATIVE_STATE)},`,
-      `${slayer.name} ${mediator.call('pick', CREATIVE_ACT)} the ${mediator.call(
+      `In a state of pure ${mediator.call('pick', dictionary.chaos.gods.creative_state)},`,
+      `${slayer.name} ${mediator.call(
         'pick',
-        CREATIVE_FLUIDS,
+        dictionary.chaos.gods.creative_act,
+      )} the ${mediator.call(
+        'pick',
+        dictionary.chaos.gods.creative_fluids,
       )} of the gods with the blood pouring from ${possessive(monster.name)} skull.`,
       `From the frothy mixture emerged a new generation of gods.`,
     ],

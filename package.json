@@ -53,6 +53,7 @@
     "typescript": "^4.0.5"
   },
   "dependencies": {
+    "@saibotsivad/blockdown": "^1.2.1",
     "cuid": "^2.1.8",
     "dot-prop": "^6.0.1",
     "idxd": "^1.0.1",
@@ -60,6 +61,7 @@
     "mannish": "^4.0.1",
     "sade": "^1.7.4",
     "seedrandom": "^3.0.5",
-    "sower": "^0.1.0"
+    "sower": "^0.1.0",
+    "yaml": "^1.10.0"
   }
 }

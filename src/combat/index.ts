@@ -76,7 +76,7 @@ const combat = (combatants: Array<Combatant>): Record<string, any> => {
             defender: {
               id: defender.character.id,
               name: defender.character.name,
-              hp: combatState.remainingHP[defenderId],
+              hp: combatState.remainingHP[defenderId] - atk.dmg,
             },
             critical: atk.critical,
             dmg: atk.dmg,
