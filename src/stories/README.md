@@ -1,4 +1,4 @@
-## Stories
+# Stories
 
 The "stories" module is designed to make for easy access to procedurally generated stories. Stories are a combination of standard templating (pass in a dataset and have the values inserted) and random generation from a dictionary file. This way, no story, even given the same template, is the same.
 
