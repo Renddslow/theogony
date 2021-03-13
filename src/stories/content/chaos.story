@@ -1,3 +1,12 @@
+/** Variables
+  * - monster: Monster
+  * - participants: Deity[]
+  * - allGods: boolean
+  * - rounds: number
+  * - monsterDead: boolean
+  * - slayer: Deity
+  */
+
 ---!story#opener
 
 Out of the {{$.monster.emerge_from}}, {{monster.name}} emerged. A {{$.monster.adjective}} {{monster.type}}, {{monster.pronouns.subject}} {{$.monster.evil_act}}. {{capitalize monster.pronouns.possessive}} {{$.monster.evil_descriptor}} was great, and it broke the souls of the newly formed gods. But {{monster.pronouns.possessive}} reign was not to last.

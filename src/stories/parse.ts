@@ -15,7 +15,7 @@ export type StoryTree = {
 };
 
 const parse = (content: string): StoryTree => {
-  const { blocks } = blockdown(content);
+  const { blocks } = blockdown(content.replace(/^\/\*\* Variables((?:.|\n)*)\*\//, ''));
   const tree: StoryTree = {
     chapters: blocks
       .filter(({ name }) => name === 'story')

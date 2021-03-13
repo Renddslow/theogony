@@ -61,12 +61,12 @@ const createSetting = (opts: Options) => {
     }
   }
 
-  // console.log(JSON.stringify(setting, null, 2));
+  return setting;
 
   /**
    * 1. Create first generation ✅
    * 2. Theogony
-   *    - chaos: slay a dragon/serpent - make some gods
+   *    - chaos: slay a dragon/serpent ✅ - make some gods
    *    - copulation: sexy-time (think @dunsany/pantheon)
    *    - egg
    *    - iluvatar: chief One god who creates a divine council
@@ -80,7 +80,6 @@ const createSetting = (opts: Options) => {
    * 9. Antics/Conflicts
    * 10. Heroes + Demi-gods
    * 11. (optional) Cataclysm
-   * 12. (optional) Ragnarok
    */
 };
 

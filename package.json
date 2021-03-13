@@ -2,7 +2,7 @@
   "name": "theogony",
   "version": "0.1.0",
   "private": false,
-  "description": "Procedural generator for the theogony of pantheons",
+  "description": "A procedural generator for the RPG campaign settings.",
   "repository": "https://github.com/Renddslow/theogony",
   "license": "MIT",
   "author": "Matt McElwee <mubatt@wyopub.com>",
@@ -16,6 +16,22 @@
     "try": "node dist/index.js",
     "nameday": "node dist/naming/generator/cli.js"
   },
+  "keywords": [
+    "deities",
+    "gods",
+    "goddesses",
+    "god",
+    "goddess",
+    "dnd",
+    "d&d",
+    "pathfinder",
+    "pfrpg",
+    "srd",
+    "wiki",
+    "magic",
+    "generator",
+    "procedural generator"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
