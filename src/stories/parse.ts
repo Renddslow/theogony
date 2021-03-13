@@ -6,6 +6,8 @@ export type StoryTree = {
     id: string;
     dictionary_scope?: string;
     add_pronouns?: string[];
+    external?: boolean;
+    condition?: string[];
   }>;
   chapters: {
     [key: string]: string;

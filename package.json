@@ -10,8 +10,9 @@
   "scripts": {
     "test": "ava",
     "test:coverage": "nyc ava",
-    "build": "node build.js",
-    "pretry": "yarn build --sourcemap",
+    "build": "tsc",
+    "postbuild": "cp -r src/stories/content dist/stories/",
+    "pretry": "yarn build",
     "try": "node dist/index.js",
     "nameday": "node dist/naming/generator/cli.js"
   },
@@ -56,9 +57,11 @@
     "@saibotsivad/blockdown": "^1.2.1",
     "cuid": "^2.1.8",
     "dot-prop": "^6.0.1",
+    "handlebars": "^4.7.7",
     "idxd": "^1.0.1",
     "klona": "^2.0.4",
     "mannish": "^4.0.1",
+    "proxy-deep": "^3.1.0",
     "sade": "^1.7.4",
     "seedrandom": "^3.0.5",
     "sower": "^0.1.0",
