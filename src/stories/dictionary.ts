@@ -12,6 +12,9 @@ const setupPickProxy = (obj) =>
 const dictionary = {
   chaos: {
     opener: [],
+    cosmos: setupPickProxy({
+      primordial_substance: ['sea', 'chaos waters', 'abyss', 'rift', 'aether'],
+    }),
     monster: setupPickProxy({
       adjective: ['violent', 'ferocious', 'vile', 'wicked'],
       emerge_from: ['sea', 'chaos waters', 'abyss', 'rift', 'aether'],
@@ -20,6 +23,7 @@ const dictionary = {
         'inflicted heavy burdens on the gods',
         'wrought chaos throughout the cosmos',
       ],
+      primordial_action: [''],
       evil_descriptor: ['tyranny'],
       reign_descriptor: ['reign', 'regime', 'cruelty', 'machinations', 'violence'],
       supremacy: ['reign of terror', 'endless regime', 'final empire', 'cosmos breaking rule'],

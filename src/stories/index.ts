@@ -3,6 +3,7 @@ import path from 'path';
 import { get } from 'dot-prop';
 import { klona } from 'klona';
 import Handlebars from 'handlebars';
+import vm from 'vm';
 
 import parse from './parse';
 import dictionary from './dictionary';
@@ -23,7 +24,7 @@ const parseWorkflowCondition = (data: Record<string, any>) => (cond: string) => 
   }
 
   const bang = entity.replace(/[^!]/g, '');
-  return eval(`${bang}${value} ${rest.join(' ')}`);
+  return vm.runInNewContext(`${bang}${value} ${rest.join(' ')}`);
 };
 
 const addPronouns = (data: Record<string, any>, list: string[]) => {
