@@ -51,13 +51,14 @@ const createSetting = (opts: Options) => {
       console.log('🦋');
       const { story, monster, dead } = createChaosConflict(setting.deities);
       setting.stories.push(story);
-      console.log(story);
       setting.monsters.push(monster);
       setting.deities = setting.deities.map((deity) => ({
         ...deity,
         living: !dead.includes(deity.id),
       }));
-      setting.deities.push(...[]); // spawnSecondGeneration('chaos')
+      break;
+    }
+    case 'egg': {
     }
   }
 
@@ -66,20 +67,26 @@ const createSetting = (opts: Options) => {
   /**
    * 1. Create first generation ✅
    * 2. Theogony
-   *    - chaos: slay a dragon/serpent ✅ - make some gods
+   *    - chaos: slay a dragon/serpent ✅
    *    - copulation: sexy-time (think @dunsany/pantheon)
-   *    - egg
+   *    - egg: just pushes a story
    *    - iluvatar: chief One god who creates a divine council
    *    - metamorphosis: similar to iluvatar, but with the singular god splitting itself and becoming other gods
-   * 3. (optional) Deity conflict
-   * 4. Cosmology
-   * 5. Second Generation
-   * 6. Relationships
-   * 7. (optional) Titanomachy
-   * 8. Races + Cultures Created
-   * 9. Antics/Conflicts
-   * 10. Heroes + Demi-gods
-   * 11. (optional) Cataclysm
+   * 3. Cosmology
+   *    - Name "Earth" universe/planet
+   *    - Develop Earth's cosmology (is it riding on a turtle? is it in a dome?)
+   *    - Determine if Multiverse or Planes/Realms
+   *    - Outer Realms (if multiverse, these just are, if planes/realms, pick a pre-rolled realm)
+   *        - Pick a heaven
+   *        - Pick a hell
+   *        - (optional) Pick niche afterlives (a la Valhalla, Catholic Heaven)
+   * 4. Next Generation
+   * 5. Relationships
+   * 6. (optional) Titanomachy
+   * 7. Races + Cultures Created
+   * 8. Antics/Conflicts
+   * 9. Heroes + Demi-gods
+   * 10. (optional) Cataclysm
    */
 };
 
